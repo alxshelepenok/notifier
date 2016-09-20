@@ -1,0 +1,166 @@
+/* Globals */
+$spaser: 20px;
+
+/* Colors */
+$error-color: rgba(242, 74, 63, 0.9);
+$default-color: rgba(66, 111, 171, 0.9);
+$success-color: rgba(109, 183, 54, 0.9);
+$warning-color: rgba(183, 128, 54, 0.9);
+
+.notifier {
+  &__list {
+    position: fixed;
+    z-index: 1000;
+    top: $spaser;
+    left: $spaser;
+    right: auto;
+    bottom: auto;
+
+    &--position {
+      &-top-left {
+        top: $spaser;
+        left: $spaser;
+        right: auto;
+        bottom: auto;
+      }
+
+      &-top-right {
+        top: $spaser;
+        left: auto;
+        right: $spaser;
+        bottom: auto;
+      }
+
+      &-bottom-left {
+        top: auto;
+        left: $spaser;
+        right: auto;
+        bottom: $spaser;
+      }
+
+      &-bottom-right {
+        top: auto;
+        left: auto;
+        right: $spaser;
+        bottom: $spaser;
+      }
+
+    }
+
+  }
+
+  &__item {
+    width: 200px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: $default-color;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+
+    &--theme {
+      &-default {
+        background: $default-color;
+      }
+
+      &-warning {
+        background: $warning-color;
+      }
+
+      &-error {
+        background: $error-color;
+      }
+
+      &-success {
+        background: $success-color;
+      }
+
+    }
+
+    &--animation {
+      &-show {
+        animation: notifier-show 180ms cubic-bezier(.175, .885, .32, 1.27499), notification-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1);
+      }
+
+      &-hide {
+        animation: notifier-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), notifier-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1);
+        animation-fill-mode: forwards;
+      }
+
+    }
+
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+@keyframes notifier-shrink {
+  0% {
+    opacity: 0;
+    max-height: 200px;
+    transform: scale(.8);
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
+    transform: scale(.8);
+  }
+
+}
+
+@keyframes notifier-show {
+  0% {
+    opacity: 0;
+    transform: perspective(450px) translate(0, -30px) rotateX(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(450px) translate(0, 0) rotateX(0deg);
+  }
+
+}
+
+@keyframes notifier-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+}
+
+@-webkit-keyframes notifier-show {
+  0% {
+    opacity: 0;
+    -webkit-transform: perspective(450px) translate(0, -30px) rotateX(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: perspective(450px) translate(0, 0) rotateX(0deg);
+  }
+
+}
+
+@-webkit-keyframes notifier-hide {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+  }
+
+}

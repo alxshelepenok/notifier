@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "umd",
+    "sourceMap": false,
+    "rootDir": ".",
+    "outDir": "dist",
+    "isolatedModules": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noImplicitUseStrict": false,
+    "declaration": false
+  },
+  "files": [
+    "src/index.ts"
+  ]
+}
