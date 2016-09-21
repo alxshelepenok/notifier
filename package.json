@@ -1,15 +1,21 @@
 {
-  "version": "1.0.0",
-  "name": "notifer",
+  "version": "1.0.1",
+  "name": "typescript-notifier",
   "description": "Clean notifications plugin with no dependencies.",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --progress --colors"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpioneer/notifier.git"
+  },
   "keywords": [
     "typescript",
     "notifer",
+    "plugin",
+    "no dependencies",
     "notifications"
   ],
   "author": "Alexander Shelepenok <a.shelepenok@gmail.com>",
@@ -21,7 +27,7 @@
   	"autoprefixer": "^6.4.1",
   	"postcss-loader": "^0.8.1",
   	"style-loader": "^0.13.0",
-      "css-loader": "^0.25.0",
+    "css-loader": "^0.25.0",
 	"webpack": "^1.12.14",
   	"typescript": "^1.8.10",
   	"ts-loader": "^0.8.2"

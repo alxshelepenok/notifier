@@ -1,74 +1,100 @@
-import './styles.scss';
+import './style.scss';
 
 interface INotifier {
     message: string,
-    options: INotifierOptions
+    options: INotifierItemOptions
 }
 
-interface INotifierOptions {
-    theme: string,
+interface INotifierItemOptions {
+    type: string,
     delay: number,
-    position: string,
     animationShowClass: string,
     animationHideClass: string
+}
+
+interface INotifierBaseOptions {
+    theme: string,
+    position: string
 }
 
 var Notifications: Array<INotifier> = [];
 
 export default class Notifier {
     message: string;
-    options: {
-        theme: string,
+    
+    itemOptions: {
+        type: string,
         delay: number,
-        position: string,
         animationShowClass: string,
         animationHideClass: string
     };
+    
+    baseOptions: {
+        theme: string,
+        position: string
+    };
+
+    private static checkOptions(o: any, k: string) {
+        if (typeof o != 'undefined') {
+            return o.hasOwnProperty(k)
+        } else {
+            return false
+        }
+    };
 
     private notices: Array<INotifier>;
-    private currentNotificationID: number;
     private list: HTMLElement;
-
-    constructor(message: string, options: INotifierOptions) {
-        this.notices = Notifications;
-        this.currentNotificationID = this.notices.length;
-
-        this.message = message;
-
-        const checkOptions = (o: string) => {
-            if (typeof options != 'undefined') {
-                return options.hasOwnProperty(o)
-            } else {
-                return false
-            }
+    
+    constructor(options: INotifierBaseOptions) {
+        this.baseOptions = {
+            theme: Notifier.checkOptions(options, 'theme') ? options.theme : 'default',
+            position: Notifier.checkOptions(options, 'position') ? options.position : 'top-right'
         };
 
-        this.options = {
-            theme: checkOptions('theme') ? options.theme : 'default',
-            delay: checkOptions('delay') ? options.delay : 3000,
-            position: checkOptions('position') ? options.position : 'top-right',
-            animationShowClass: checkOptions('animationShowClass') ? options.animationShowClass : 'notifier__item--animation-show',
-            animationHideClass: checkOptions('animationHideClass') ? options.animationHideClass : 'notifier__item--animation-hide'
-        };
+        const container = document.createElement('div');
+        container.id = 'js-notifier';
+        container.innerHTML = `<div class="js-notifier">
+                                    <div id="js-notifier-list" class="notifier__list notifier__list--position-${this.baseOptions.position} notifier__list--theme-${this.baseOptions.theme}"></div>
+                               </div>`;
 
-        this.setAction('show');
-        this.setAction('activate');
-        this.setAction('hide');
+        document.body.appendChild(container);
+
+        this.list = document.getElementById('js-notifier-list');
     }
 
-    setAction(action: string): Function {
+    post(message: string, options: INotifierItemOptions): number {
+        this.notices = Notifications;
+        this.message = message;
+
+        this.itemOptions = {
+            type: Notifier.checkOptions(options, 'type') ? options.type : 'default',
+            delay: Notifier.checkOptions(options, 'delay') ? options.delay : 3000,
+            animationShowClass: Notifier.checkOptions(options, 'animationShowClass') ? options.animationShowClass : 'notifier__item--animation-show',
+            animationHideClass: Notifier.checkOptions(options, 'animationHideClass') ? options.animationHideClass : 'notifier__item--animation-hide'
+        };
+
+        const itemID = this.notices.length;
+
+        this.setAction('show', itemID);
+        this.setAction('activate', itemID);
+        this.setAction('hide', itemID);
+
+        return itemID
+    }
+
+    setAction(action: string, itemID: number): Function {
         const commands: any = {
             activate: () => {
-                this.activateClose();
+                this.activateClose(itemID);
             },
             show: () => {
                 this.addNotification();
-                this.renderNotification();
+                this.renderNotification(itemID);
             },
             hide: () => {
                 setTimeout(() => {
-                    this.removeNotification(this.currentNotificationID);
-                }, this.options.delay);
+                    this.removeNotification(itemID);
+                }, this.itemOptions.delay);
             }
         };
 
@@ -76,58 +102,45 @@ export default class Notifier {
     }
 
     addNotification(): number {
-        return this.notices.push({message: this.message, options: this.options});
+        return this.notices.push({message: this.message, options: this.itemOptions});
     }
 
-    removeNotification(i: number): void {
-        if (typeof this.notices[i] != 'undefined') {
-            const item = this.list.querySelector('div[data-notice-id="' + i + '"]');
+    removeNotification(itemID: number): void {
+        if (typeof this.notices[itemID] != 'undefined') {
+            const item = this.list.querySelector('div[data-notice-id="' + itemID + '"]');
 
             if (typeof item != 'undefined') {
-                item.classList.remove(this.options.animationShowClass);
-                item.classList.add(this.options.animationHideClass);
+                item.classList.remove(this.itemOptions.animationShowClass);
+                item.classList.add(this.itemOptions.animationHideClass);
 
                 setTimeout(() => {
                     item.parentNode.removeChild(item);
-                }, 300);
+                }, 500);
             }
 
-            delete this.notices[i];
+            delete this.notices[itemID];
         }
     }
 
-    insertNotification(): Node {
-        this.list = document.getElementById('js-notifier-list');
-
+    renderNotification(itemID: number): Node {
         const item = document.createElement('div');
-        item.classList.add('notifier__item', 'notifier__item--theme-' + this.options.theme, this.options.animationShowClass);
-        item.setAttribute('data-notice-id', (this.currentNotificationID).toString());
+
+        item.classList.add('notifier__item', 'notifier__item--type-' + this.itemOptions.type, this.itemOptions.animationShowClass);
+        item.setAttribute('data-notice-id', itemID.toString());
         item.innerHTML = `<p class="notifier__text">${this.message}</p>`;
 
         return this.list.insertBefore(item, this.list.firstChild);
     }
 
-    renderNotification(): Node {
-        if (document.getElementById('js-notifier') == undefined) {
-            const container = document.createElement('div');
-            container.id = 'js-notifier';
-            container.innerHTML = '<div class="js-notifier"><div id="js-notifier-list" class="notifier__list"></div></div>';
-
-            document.body.appendChild(container);
-        }
-
-        return this.insertNotification();
-    }
-
-    activateClose(): void {
-        const item = this.list.querySelector('div[data-notice-id="' + (this.currentNotificationID) + '"]');
+    activateClose(itemID: number): void {
+        const item = this.list.querySelector('div[data-notice-id="' + itemID + '"]');
 
         item.addEventListener('click', () => {
-            return this.removeNotification(this.currentNotificationID)
+            return this.removeNotification(itemID)
         });
     }
 }
 
-export function get(message: string, options: any): void {
-    new Notifier(message, options)
+export function setup(options: INotifierBaseOptions): Notifier {
+    return new Notifier(options)
 }

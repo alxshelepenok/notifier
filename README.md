@@ -1,8 +1,25 @@
 # Notifier
 
+
+## Install
+
+`npm install typescript-notifier`
+
 ## Building
 
 `npm run build`
+
+## Usage
+
+    var notifier = Notifier.setup({
+        theme: 'default',
+        position: 'top-right'
+    });
+    
+    notifier.get('Hello World', {
+        type: 'error',
+        delay: '6000'
+    });
 
 ## License
 The MIT license.

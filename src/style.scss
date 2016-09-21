@@ -1,5 +1,5 @@
 /* Globals */
-$spaser: 20px;
+$spacer: 20px;
 
 /* Colors */
 $error-color: rgba(242, 74, 63, 0.9);
@@ -11,38 +11,38 @@ $warning-color: rgba(183, 128, 54, 0.9);
   &__list {
     position: fixed;
     z-index: 1000;
-    top: $spaser;
-    left: $spaser;
-    right: auto;
+    top: $spacer;
+    left: auto;
+    right: $spacer;
     bottom: auto;
 
     &--position {
       &-top-left {
-        top: $spaser;
-        left: $spaser;
+        top: $spacer;
+        left: $spacer;
         right: auto;
         bottom: auto;
       }
 
       &-top-right {
-        top: $spaser;
+        top: $spacer;
         left: auto;
-        right: $spaser;
+        right: $spacer;
         bottom: auto;
       }
 
       &-bottom-left {
         top: auto;
-        left: $spaser;
+        left: $spacer;
         right: auto;
-        bottom: $spaser;
+        bottom: $spacer;
       }
 
       &-bottom-right {
         top: auto;
         left: auto;
-        right: $spaser;
-        bottom: $spaser;
+        right: $spacer;
+        bottom: $spacer;
       }
 
     }
@@ -58,7 +58,7 @@ $warning-color: rgba(183, 128, 54, 0.9);
     cursor: pointer;
     border-radius: 2px;
 
-    &--theme {
+    &--type {
       &-default {
         background: $default-color;
       }
