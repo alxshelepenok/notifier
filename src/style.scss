@@ -1,11 +1,13 @@
 /* Globals */
 $spacer: 20px;
 
+$lighten: 35%;
+
 /* Colors */
-$error-color: rgba(242, 74, 63, 0.9);
-$default-color: rgba(66, 111, 171, 0.9);
-$success-color: rgba(109, 183, 54, 0.9);
-$warning-color: rgba(183, 128, 54, 0.9);
+$error-color: rgb(242, 74, 63);
+$default-color: rgb(66, 111, 171);
+$success-color: rgb(109, 183, 54);
+$warning-color: rgb(183, 128, 54);
 
 .notifier {
   &__list {
@@ -51,28 +53,33 @@ $warning-color: rgba(183, 128, 54, 0.9);
 
   &__item {
     width: 200px;
-    padding: 10px 15px;
+    padding: 15px 25px;
     margin-bottom: 10px;
-    background: $default-color;
-    color: #fff;
+    border: 1px solid;
+    background: lighten($default-color, $lighten);
+    color: $default-color;
     cursor: pointer;
     border-radius: 2px;
 
     &--type {
       &-default {
-        background: $default-color;
+        background: lighten($default-color, $lighten);
+        color: $default-color;
       }
 
       &-warning {
-        background: $warning-color;
+        background: lighten($warning-color, $lighten);
+        color: $warning-color;
       }
 
       &-error {
-        background: $error-color;
+        background: lighten($error-color, $lighten);
+        color: $error-color;
       }
 
       &-success {
-        background: $success-color;
+        background: lighten($success-color, $lighten);
+        color: $success-color;
       }
 
     }
