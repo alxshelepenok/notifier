@@ -8,6 +8,10 @@ NPM:</br>
 Bower:</br>
 `bower install typescript-notifier`
 
+## Live demo
+
+ashk.io: [projects/notifier](http://ashk.io/projects/notifier/) 
+
 ## Downloads
 
 [notifier.min.js](http://ashk.io/projects/notifier/dist/notifier.min.js) ~9 kB.
@@ -17,15 +21,15 @@ Bower:</br>
 ## Usage
 
     var notifier = Notifier.setup({
-        theme: 'default', // 'default' or use your custom theme
-        position: 'top-right' // 'top-right', 'top-left', 'bottom-left', 'bottom-right'
+        theme: 'default',
+        position: 'top-right' 
     });
     
     notifier.get('Hello World', {
-        type: 'error', // 'default', 'success', 'warning', 'error'
+        type: 'error',
         delay: '6000',
-        animationShowClass: 'notifier__item--animation-show', // 'notifier__item--animation-show' by default
-        animationHideClass: 'notifier__item--animation-hide' // 'notifier__item--animation-hide' by default or use any other animation from animate.css
+        animationShowClass: 'notifier__item--animation-show',
+        animationHideClass: 'notifier__item--animation-hide'
     });
 
 ## Building
