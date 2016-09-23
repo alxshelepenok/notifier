@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "typescript-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": "src/index.ts",
@@ -20,16 +20,15 @@
   ],
   "author": "Alexander Shelepenok <a.shelepenok@gmail.com>",
   "license": "MIT",
-
   "devDependencies": {
-  	"sass-loader": "^4.0.2",
-  	"node-sass": "^3.4.2",
-  	"autoprefixer": "^6.4.1",
-  	"postcss-loader": "^0.8.1",
-  	"style-loader": "^0.13.0",
+    "sass-loader": "^4.0.2",
+    "node-sass": "^3.4.2",
+    "autoprefixer": "^6.4.1",
+    "postcss-loader": "^0.8.1",
+    "style-loader": "^0.13.0",
     "css-loader": "^0.25.0",
-	"webpack": "^1.12.14",
-  	"typescript": "^1.8.10",
-  	"ts-loader": "^0.8.2"
+    "webpack": "^1.12.14",
+    "typescript": "^1.8.10",
+    "ts-loader": "^0.8.2"
   }
 }
