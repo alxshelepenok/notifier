@@ -11,7 +11,8 @@
   "keywords": [
     "typescript",
     "notifer",
-    "no dependencies",
+    "no",
+    "dependencies",
     "notifications"
   ],
   "authors": [
@@ -25,5 +26,5 @@
     "test",
     "tests"
   ],
-  "private": false
+  "homepage": "https://github.com/wpioneer/notifier"
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "typescript-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": "src/index.ts",

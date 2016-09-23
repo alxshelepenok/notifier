@@ -25,7 +25,7 @@ ashk.io: [projects/notifier](http://ashk.io/projects/notifier/)
         position: 'top-right' 
     });
     
-    notifier.get('Hello World', {
+    notifier.post('Hello World', {
         type: 'error',
         delay: '6000',
         animationShowClass: 'notifier__item--animation-show',
