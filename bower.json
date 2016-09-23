@@ -1,0 +1,29 @@
+{
+  "name": "typescript-notifier",
+  "description": "Notifications library written in TypeScript with no dependencies",
+  "main": [
+    "src/index.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpioneer/notifier.git"
+  },
+  "keywords": [
+    "typescript",
+    "notifer",
+    "no dependencies",
+    "notifications"
+  ],
+  "authors": [
+    "Alexander Shelepenok <a.shelepenok@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": false
+}

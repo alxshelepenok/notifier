@@ -1,25 +1,36 @@
 # Notifier
 
+## Installing
 
-## Install
-
+NPM:</br>
 `npm install typescript-notifier`
 
-## Building
+Bower:</br>
+`bower install typescript-notifier`
 
-`npm run build`
+## Downloads
+
+[notifier.min.js](http://ashk.io/projects/notifier/dist/notifier.min.js) ~9 kB.
+</br>
+[notifier.js](http://ashk.io/projects/notifier/dist/notifier.js) ~20 kB.
 
 ## Usage
 
     var notifier = Notifier.setup({
-        theme: 'default',
-        position: 'top-right'
+        theme: 'default', // 'default' or use your custom theme
+        position: 'top-right' // 'top-right', 'top-left', 'bottom-left', 'bottom-right'
     });
     
     notifier.get('Hello World', {
-        type: 'error',
-        delay: '6000'
+        type: 'error', // 'default', 'success', 'warning', 'error'
+        delay: '6000',
+        animationShowClass: 'notifier__item--animation-show', // 'notifier__item--animation-show' by default
+        animationHideClass: 'notifier__item--animation-hide' // 'notifier__item--animation-hide' by default or use any other animation from animate.css
     });
+
+## Building
+
+`npm run build`
 
 ## License
 The MIT license.

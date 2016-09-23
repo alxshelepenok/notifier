@@ -12,7 +12,7 @@ module.exports = {
     path: path.join(__dirname, './dist'),
     library: 'Notifier',
     libraryTarget: 'umd',
-    filename: 'bundle.js',
+    filename: process.env.NODE_ENV == 'production' ? 'notifier.min.js' : 'notifier.js',
     umdNamedDefine: true
   },
   module: {
@@ -41,6 +41,13 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true,
+      compressor: {
+        warnings: false
+      }
     })
   ]
 }
