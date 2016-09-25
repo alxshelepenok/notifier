@@ -2,7 +2,7 @@
   "name": "typescript-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": [
-    "src/index.ts"
+    "dist/index.js"
   ],
   "repository": {
     "type": "git",

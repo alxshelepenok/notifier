@@ -2,7 +2,7 @@
   "version": "1.0.4",
   "name": "typescript-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
-  "main": "src/index.ts",
+  "main": "dist/notifier.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --progress --colors",
@@ -30,5 +30,8 @@
     "webpack": "^1.12.14",
     "typescript": "^1.8.10",
     "ts-loader": "^0.8.2"
+  },
+  "typescript": {
+    "definition": "dist/typings/notifier.d.ts"
   }
 }

@@ -20,7 +20,9 @@ ashk.io: [projects/notifier](http://ashk.io/projects/notifier/)
 
 ## Usage
 
-    var notifier = Notifier.setup({
+    import Notifier from 'typescript-notifier';
+
+    const notifier = new Notifier({
         theme: 'default',
         position: 'top-right' 
     });
@@ -34,7 +36,10 @@ ashk.io: [projects/notifier](http://ashk.io/projects/notifier/)
 
 ## Building
 
+Production:</br>
 `npm run build`
+Development:</br>
+`npm run build-dev`
 
 ## License
 The MIT license.

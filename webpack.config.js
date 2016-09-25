@@ -11,9 +11,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     library: 'Notifier',
-    libraryTarget: 'umd',
-    filename: process.env.NODE_ENV == 'production' ? 'notifier.min.js' : 'notifier.js',
-    umdNamedDefine: true
+     libraryTarget: 'umd',
+    filename: process.env.NODE_ENV == 'production' ? 'notifier.min.js' : 'notifier.js'
   },
   module: {
     loaders: [

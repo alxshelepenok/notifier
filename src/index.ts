@@ -1,18 +1,18 @@
 import './style.scss';
 
-interface INotifier {
+export interface INotifier {
     message: string,
     options: INotifierItemOptions
 }
 
-interface INotifierItemOptions {
+export interface INotifierItemOptions {
     type: string,
     delay: number,
     animationShowClass: string,
     animationHideClass: string
 }
 
-interface INotifierBaseOptions {
+export interface INotifierBaseOptions {
     theme: string,
     position: string
 }
@@ -60,6 +60,8 @@ export default class Notifier {
         document.body.appendChild(container);
 
         this.list = document.getElementById('js-notifier-list');
+
+        return this
     }
 
     post(message: string, options: INotifierItemOptions): number {
@@ -139,8 +141,4 @@ export default class Notifier {
             return this.removeNotification(itemID)
         });
     }
-}
-
-export function setup(options: INotifierBaseOptions): Notifier {
-    return new Notifier(options)
 }
