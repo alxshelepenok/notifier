@@ -52,10 +52,8 @@ export default class Notifier {
         };
 
         const container = document.createElement('div');
-        container.id = 'js-notifier';
-        container.innerHTML = `<div class="js-notifier">
-                                    <div id="js-notifier-list" class="notifier__list notifier__list--position-${this.baseOptions.position} notifier__list--theme-${this.baseOptions.theme}"></div>
-                               </div>`;
+        container.classList.add('js-notifier');
+        container.innerHTML = `<div id="js-notifier-list" class="notifier__list notifier__list--position-${this.baseOptions.position} notifier__list--theme-${this.baseOptions.theme}"></div>`;
 
         document.body.appendChild(container);
 

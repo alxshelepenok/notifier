@@ -1,13 +1,13 @@
 /* Globals */
 $spacer: 20px;
 
-$lighten: 35%;
+$lighten: 30%;
 
 /* Colors */
-$error-color: rgb(242, 74, 63);
-$default-color: rgb(66, 111, 171);
-$success-color: rgb(109, 183, 54);
-$warning-color: rgb(183, 128, 54);
+$error-color: #f24a3f;
+$default-color: #426fab;
+$success-color: #6db736;
+$warning-color: #b78036;
 
 .notifier {
   &__list {
