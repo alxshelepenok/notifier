@@ -63,23 +63,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	})(function (require, exports) {
 	    "use strict";
-	    require('./style.scss');
+	    require("./style.scss");
 	    var Notifications = [];
 	    var Notifier = (function () {
 	        function Notifier(options) {
 	            this.baseOptions = {
-	                theme: Notifier.checkOptions(options, 'theme') ? options.theme : 'default',
-	                position: Notifier.checkOptions(options, 'position') ? options.position : 'top-right'
+	                theme: Notifier.checkOptions(options, "theme") ? options.theme : "default",
+	                position: Notifier.checkOptions(options, "position") ? options.position : "top-right"
 	            };
-	            var container = document.createElement('div');
-	            container.classList.add('js-notifier');
+	            var container = document.createElement("div");
+	            container.classList.add("js-notifier");
 	            container.innerHTML = "<div id=\"js-notifier-list\" class=\"notifier__list notifier__list--position-" + this.baseOptions.position + " notifier__list--theme-" + this.baseOptions.theme + "\"></div>";
 	            document.body.appendChild(container);
-	            this.list = document.getElementById('js-notifier-list');
+	            this.list = document.getElementById("js-notifier-list");
 	            return this;
 	        }
 	        Notifier.checkOptions = function (o, k) {
-	            if (typeof o != 'undefined') {
+	            if (typeof o != "undefined") {
 	                return o.hasOwnProperty(k);
 	            }
 	            else {
@@ -91,15 +91,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.notices = Notifications;
 	            this.message = message;
 	            this.itemOptions = {
-	                type: Notifier.checkOptions(options, 'type') ? options.type : 'default',
-	                delay: Notifier.checkOptions(options, 'delay') ? options.delay : 3000,
-	                animationShowClass: Notifier.checkOptions(options, 'animationShowClass') ? options.animationShowClass : 'notifier__item--animation-show',
-	                animationHideClass: Notifier.checkOptions(options, 'animationHideClass') ? options.animationHideClass : 'notifier__item--animation-hide'
+	                type: Notifier.checkOptions(options, "type") ? options.type : "default",
+	                delay: Notifier.checkOptions(options, "delay") ? options.delay : 3000,
+	                animationShowClass: Notifier.checkOptions(options, "animationShowClass") ? options.animationShowClass : "notifier__item--animation-show",
+	                animationHideClass: Notifier.checkOptions(options, "animationHideClass") ? options.animationHideClass : "notifier__item--animation-hide"
 	            };
 	            var itemID = this.notices.length;
-	            this.setAction('show', itemID);
-	            this.setAction('activate', itemID);
-	            this.setAction('hide', itemID);
+	            this.setAction("show", itemID);
+	            this.setAction("activate", itemID);
+	            this.setAction("hide", itemID);
 	            return itemID;
 	        };
 	        Notifier.prototype.setAction = function (action, itemID) {
@@ -124,9 +124,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return this.notices.push({ message: this.message, options: this.itemOptions });
 	        };
 	        Notifier.prototype.removeNotification = function (itemID) {
-	            if (typeof this.notices[itemID] != 'undefined') {
-	                var item_1 = this.list.querySelector('div[data-notice-id="' + itemID + '"]');
-	                if (typeof item_1 != 'undefined') {
+	            if (typeof this.notices[itemID] != "undefined") {
+	                var item_1 = this.list.querySelector("div[data-notice-id='" + itemID + "']");
+	                if (typeof item_1 != "undefined") {
 	                    item_1.classList.remove(this.itemOptions.animationShowClass);
 	                    item_1.classList.add(this.itemOptions.animationHideClass);
 	                    setTimeout(function () {
@@ -137,16 +137,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        };
 	        Notifier.prototype.renderNotification = function (itemID) {
-	            var item = document.createElement('div');
-	            item.classList.add('notifier__item', 'notifier__item--type-' + this.itemOptions.type, this.itemOptions.animationShowClass);
-	            item.setAttribute('data-notice-id', itemID.toString());
+	            var item = document.createElement("div");
+	            item.classList.add("notifier__item", "notifier__item--type-" + this.itemOptions.type, this.itemOptions.animationShowClass);
+	            item.setAttribute("data-notice-id", itemID.toString());
 	            item.innerHTML = "<p class=\"notifier__text\">" + this.message + "</p>";
 	            return this.list.insertBefore(item, this.list.firstChild);
 	        };
 	        Notifier.prototype.activateClose = function (itemID) {
 	            var _this = this;
-	            var item = this.list.querySelector('div[data-notice-id="' + itemID + '"]');
-	            item.addEventListener('click', function () {
+	            var item = this.list.querySelector("div[data-notice-id='" + itemID + "']");
+	            item.addEventListener("click", function () {
 	                return _this.removeNotification(itemID);
 	            });
 	        };
@@ -213,7 +213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".notifier__list{position:fixed;z-index:1000;top:20px;left:auto;right:20px;bottom:auto}.notifier__list--position-top-left{top:20px;left:20px;right:auto;bottom:auto}.notifier__list--position-top-right{top:20px;left:auto;right:20px;bottom:auto}.notifier__list--position-bottom-left{top:auto;left:20px;right:auto;bottom:20px}.notifier__list--position-bottom-right{top:auto;left:auto;right:20px;bottom:20px}.notifier__item{width:200px;padding:15px 25px;margin-bottom:10px;border:1px solid;line-height:1.5;cursor:pointer;border-radius:2px}.notifier__item,.notifier__item--type-default{background:#a8bfde;color:#426fab}.notifier__item--type-warning{background:#e4c8a2;color:#b78036}.notifier__item--type-error{background:#fcd1ce;color:#f24a3f}.notifier__item--type-success{background:#bee4a2;color:#6db736}.notifier__item--animation-show{animation:notifier-show .18s cubic-bezier(.175,.885,.32,1.27499),notification-shrink .25s .25s cubic-bezier(.5,0,0,1)}.notifier__item--animation-hide{animation:notifier-hide .25s cubic-bezier(.33859,-.42,1,-.22),notifier-shrink .25s .25s cubic-bezier(.5,0,0,1);animation-fill-mode:forwards}.notifier__text{margin:0;padding:0}@keyframes notifier-shrink{0%{opacity:0;max-height:200px;transform:scale(.8)}to{opacity:0;max-height:0;transform:scale(.8)}}@keyframes notifier-show{0%{opacity:0;transform:perspective(450px) translateY(-30px) rotateX(90deg)}to{opacity:1;transform:perspective(450px) translate(0) rotateX(0deg)}}@keyframes notifier-hide{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}", ""]);
+	exports.push([module.id, ".notifier__list{position:fixed;z-index:1000;top:20px;left:auto;right:20px;bottom:auto}.notifier__list--position-top-left{top:20px;left:20px;right:auto;bottom:auto}.notifier__list--position-top-right{top:20px;left:auto;right:20px;bottom:auto}.notifier__list--position-bottom-left{top:auto;left:20px;right:auto;bottom:20px}.notifier__list--position-bottom-right{top:auto;left:auto;right:20px;bottom:20px}.notifier__item{width:200px;padding:15px 25px;margin-bottom:10px;border:1px solid;line-height:1.5;cursor:pointer;border-radius:2px}.notifier__item,.notifier__item--type-default{background:#bbcde5;color:#426fab}.notifier__item--type-warning{background:#e9d4b6;color:#b78036}.notifier__item--type-error{background:#fde8e6;color:#f24a3f}.notifier__item--type-success{background:#cce9b6;color:#6db736}.notifier__item--animation-show{animation:notifier-show .18s cubic-bezier(.175,.885,.32,1.27499),notification-shrink .25s .25s cubic-bezier(.5,0,0,1)}.notifier__item--animation-hide{animation:notifier-hide .25s cubic-bezier(.33859,-.42,1,-.22),notifier-shrink .25s .25s cubic-bezier(.5,0,0,1);animation-fill-mode:forwards}.notifier__text{margin:0;padding:0}@keyframes notifier-shrink{0%{opacity:0;max-height:200px;transform:scale(.8)}to{opacity:0;max-height:0;transform:scale(.8)}}@keyframes notifier-show{0%{opacity:0;transform:perspective(450px) translateY(-30px) rotateX(90deg)}to{opacity:1;transform:perspective(450px) translate(0) rotateX(0deg)}}@keyframes notifier-hide{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}", ""]);
 
 	// exports
 
