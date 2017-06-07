@@ -1,26 +1,18 @@
 # Notifier
 
+Notifications library written in TypeScript with no dependencies.
+
 ## Installing
 
 NPM:</br>
-`npm install typescript-notifier`
+`npm install ts-notifier`
 
 Bower:</br>
-`bower install typescript-notifier`
-
-## Live demo
-
-ashk.io: [projects/notifier](http://ashk.io/projects/notifier/) 
-
-## Downloads
-
-[notifier.min.js](http://ashk.io/projects/notifier/dist/notifier.min.js) ~9 kB.
-</br>
-[notifier.js](http://ashk.io/projects/notifier/dist/notifier.js) ~20 kB.
+`bower install ts-notifier`
 
 ## Usage
 
-    import Notifier from 'typescript-notifier';
+    import Notifier from 'ts-notifier';
 
     const notifier = new Notifier({
         theme: 'default',
@@ -45,7 +37,7 @@ Development:</br>
 ## License
 The MIT license.
 
-Copyright (c) 2016 Alexandr Shelepenok [ashk.io](http://ashk.io)
+Copyright (c) 2016 Alexander Shelepenok
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

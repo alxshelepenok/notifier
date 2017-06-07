@@ -1,12 +1,12 @@
 {
-  "name": "typescript-notifier",
+  "name": "ts-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": [
     "dist/notifier.js"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wpioneer/notifier.git"
+    "url": "https://github.com/shelepenok/notifier.git"
   },
   "keywords": [
     "typescript",
@@ -26,5 +26,5 @@
     "test",
     "tests"
   ],
-  "homepage": "https://github.com/wpioneer/notifier"
+  "homepage": "https://github.com/shelepenok/notifier"
 }

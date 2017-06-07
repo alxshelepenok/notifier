@@ -1,6 +1,6 @@
 {
-  "version": "1.0.6",
-  "name": "typescript-notifier",
+  "version": "1.0.0",
+  "name": "ts-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": "dist/notifier.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wpioneer/notifier.git"
+    "url": "https://github.com/shelepenok/notifier.git"
   },
   "keywords": [
     "typescript",
