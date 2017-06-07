@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "ts-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
   "main": "dist/notifier.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shelepenok/notifier.git"
+    "url": "git+https://github.com/alxshelepenok/notifier.git"
   },
   "keywords": [
     "typescript",
@@ -18,7 +18,7 @@
     "no dependencies",
     "notifications"
   ],
-  "author": "Alexander Shelepenok <a.shelepenok@gmail.com>",
+  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "sass-loader": "^4.0.2",
@@ -33,5 +33,12 @@
   },
   "typescript": {
     "definition": "dist/typings/notifier.d.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/alxshelepenok/notifier/issues"
+  },
+  "homepage": "https://github.com/alxshelepenok/notifier#readme",
+  "dependencies": {
+    "css-loader": "^0.25.0"
   }
 }

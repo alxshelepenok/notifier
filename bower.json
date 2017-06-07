@@ -6,7 +6,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shelepenok/notifier.git"
+    "url": "https://github.com/alxshelepenok/notifier.git"
   },
   "keywords": [
     "typescript",
@@ -16,7 +16,7 @@
     "notifications"
   ],
   "authors": [
-    "Alexander Shelepenok <a.shelepenok@gmail.com>"
+    "Alexander Shelepenok <alxshelepenok@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -26,5 +26,5 @@
     "test",
     "tests"
   ],
-  "homepage": "https://github.com/shelepenok/notifier"
+  "homepage": "https://github.com/alxshelepenok/notifier"
 }
