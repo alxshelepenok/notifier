@@ -21,15 +21,15 @@
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "sass-loader": "^4.0.2",
-    "node-sass": "^3.4.2",
-    "autoprefixer": "^6.4.1",
-    "postcss-loader": "^0.8.1",
-    "style-loader": "^0.13.0",
-    "css-loader": "^0.25.0",
-    "webpack": "^1.12.14",
-    "typescript": "^1.8.10",
-    "ts-loader": "^0.8.2"
+    "sass-loader": "4.1.1",
+    "node-sass": "3.13.1",
+    "autoprefixer": "6.7.7",
+    "postcss-loader": "0.8.2",
+    "style-loader": "0.13.2",
+    "css-loader": "0.25.0",
+    "webpack": "1.15.0",
+    "typescript": "1.8.10",
+    "ts-loader": "0.8.2"
   },
   "typescript": {
     "definition": "dist/typings/notifier.d.ts"
