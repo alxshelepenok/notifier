@@ -28,15 +28,6 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
       - run: yarn lint
 
-  test:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn test
-
   build:
     <<: *defaults
     steps:
@@ -52,9 +43,6 @@ workflows:
     jobs:
       - install
       - lint:
-          requires:
-            - install
-      - test:
           requires:
             - install
       - build:
