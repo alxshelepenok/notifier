@@ -1,4 +1,0 @@
-$ cat .gitattributes
-*.ts linguist-language=TypeScript
-**/*.ts linguist-language=TypeScript
-dist/*.js linguist-vendored

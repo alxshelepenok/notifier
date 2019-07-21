@@ -1,8 +1,6 @@
-/* Globals */
 $spacer: 20px;
 $line-height: 1.5;
 
-/* Colors */
 $error-color: #b4302b;
 $default-color: #447eaf;
 $success-color: #597151;
@@ -56,16 +54,14 @@ $warning-border-color: #d8cf82;
         right: $spacer;
         bottom: $spacer;
       }
-
     }
-
   }
 
   &__item {
     width: 200px;
     padding: 15px 25px;
     margin-bottom: 10px;
-    border: 1px solid $default-border-color; ;
+    border: 1px solid $default-border-color;
     line-height: $line-height;
     background: $default-bg-color; 
     color: $default-color; 
@@ -108,16 +104,13 @@ $warning-border-color: #d8cf82;
         animation: notifier-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), notifier-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1);
         animation-fill-mode: forwards;
       }
-
     }
-
   }
 
   &__text {
     margin: 0;
     padding: 0;
   }
-
 }
 
 @keyframes notifier-shrink {
@@ -132,7 +125,6 @@ $warning-border-color: #d8cf82;
     max-height: 0;
     transform: scale(.8);
   }
-
 }
 
 @keyframes notifier-show {
@@ -145,7 +137,6 @@ $warning-border-color: #d8cf82;
     opacity: 1;
     transform: perspective(450px) translate(0, 0) rotateX(0deg);
   }
-
 }
 
 @keyframes notifier-hide {
@@ -158,7 +149,6 @@ $warning-border-color: #d8cf82;
     opacity: 0;
     transform: scale(.8);
   }
-
 }
 
 @-webkit-keyframes notifier-show {
@@ -171,18 +161,17 @@ $warning-border-color: #d8cf82;
     opacity: 1;
     -webkit-transform: perspective(450px) translate(0, 0) rotateX(0deg);
   }
-
 }
+
 
 @-webkit-keyframes notifier-hide {
   0% {
     opacity: 1;
     -webkit-transform: scale(1);
   }
-
+  
   100% {
     opacity: 0;
     -webkit-transform: scale(.8);
   }
-
 }

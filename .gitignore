@@ -1,5 +1,6 @@
-node_modules/
-demo/
+dist
+node_modules
 .idea
 index.html
 notifier.iml
+yarn-error.log

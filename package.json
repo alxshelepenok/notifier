@@ -1,12 +1,17 @@
 {
-  "version": "1.0.7",
+  "version": "1.1.0",
   "name": "ts-notifier",
   "description": "Notifications library written in TypeScript with no dependencies",
-  "main": "dist/notifier.js",
+  "main": "./dist/notifier.min.js",
+  "typings": "./dist/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack --progress --colors",
-    "build-dev": "NODE_ENV=development webpack --progress --colors"
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint": "concurrently \"yarn run lint:ts\" \"yarn run lint:scss\"",
+    "clean": "rimraf dist",
+    "build": "yarn run clean && webpack --mode production",
+    "build-dev": "yarn run clean && webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -20,25 +25,31 @@
   ],
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "sass-loader": "^4.0.2",
-    "node-sass": "^3.4.2",
-    "autoprefixer": "^6.4.1",
-    "postcss-loader": "^0.8.1",
-    "style-loader": "^0.13.0",
-    "css-loader": "^0.25.0",
-    "webpack": "^1.12.14",
-    "typescript": "^1.8.10",
-    "ts-loader": "^0.8.2"
-  },
-  "typescript": {
-    "definition": "dist/typings/notifier.d.ts"
-  },
   "bugs": {
     "url": "https://github.com/alxshelepenok/notifier/issues"
   },
-  "homepage": "https://github.com/alxshelepenok/notifier#readme",
-  "dependencies": {
-    "css-loader": "^0.25.0"
+  "homepage": "https://github.com/alxshelepenok/notifier",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "css-loader": "^3.1.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-lint": "^4.5.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "browserslist": "^4.6.6",
+    "mini-css-extract-plugin": "^0.8.0",
+    "stylelint": "10.1.0",
+    "stylelint-config-recommended-scss": "3.3.0",
+    "stylelint-scss": "3.9.2",
+    "tslint": "5.9.1",
+    "concurrently": "4.1.1",
+    "rimraf": "2.6.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "uglifyjs-webpack-plugin": "^2.1.3"
   }
 }

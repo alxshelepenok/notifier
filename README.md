@@ -4,15 +4,12 @@ Notifications library written in TypeScript with no dependencies.
 
 ## Installing
 
-NPM:</br>
-`npm install ts-notifier`
-
-Bower:</br>
-`bower install ts-notifier`
+`yarn install ts-notifier`
 
 ## Usage
 
     import Notifier from 'ts-notifier';
+    import '~ts-notifier/dist/style.min.css';
 
     const notifier = new Notifier({
         theme: 'default',
@@ -29,15 +26,15 @@ Bower:</br>
 ## Building
 
 Production:</br>
-`npm run build`
+`yarn build`
 
 Development:</br>
-`npm run build-dev`
+`yarn build-dev
 
 ## License
 The MIT license.
 
-Copyright (c) 2016 Alexander Shelepenok
+Copyright (c) 2016-2019 Alexander Shelepenok
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

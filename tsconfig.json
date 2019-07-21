@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "umd",
-    "sourceMap": false,
+    "module": "commonjs",
+    "sourceMap": true,
     "rootDir": ".",
     "outDir": "dist",
     "isolatedModules": false,
     "removeComments": true,
     "preserveConstEnums": true,
     "noImplicitUseStrict": false,
-    "declaration": false
+    "declaration": true,
+    "declarationDir": "dist"
   },
   "files": [
     "src/index.ts"

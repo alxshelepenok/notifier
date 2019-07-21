@@ -1,52 +1,69 @@
-var webpack = require('webpack');
-var path = require('path');
-var autoprefixer = require('autoprefixer');
+"use strict";
 
-module.exports = {
-  debug: true,
-  context: path.join(__dirname, './src'),
-  entry: {
-    ts: './index.ts'
-  },
-  output: {
-    path: path.join(__dirname, './dist'),
-    library: 'Notifier',
-     libraryTarget: 'umd',
-    filename: process.env.NODE_ENV == 'production' ? 'notifier.min.js' : 'notifier.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.scss$/,
-        loader: 'style!css!sass!postcss'
-      },
-      {
-        test: /\.(js|ts)$/,
-        exclude: /node_modules/,
-        loaders: [
-          'ts-loader'
-        ]
-      }
+const path = require("path");
+const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+
+module.exports = (env, argv) => {
+  return {
+    context: path.join(__dirname, "./src"),
+    entry: {
+      ts: "./index.ts"
+    },
+    output: {
+      path: path.join(__dirname, "./dist"),
+      filename: argv.mode === "production" ? "notifier.min.js" : "notifier.js"
+    },
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+        }),
+        new OptimizeCSSAssetsPlugin({
+          cssProcessorOptions: {
+            discardComments: {
+              removeAll: true
+            }
+          },
+          canPrint: true
+        })
+      ]
+    },
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            "style-loader",
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: () => [
+                  autoprefixer()
+                ]
+              }
+            }]
+        },
+        {
+          test: /\.(js|ts)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "ts-loader"
+          }
+        }
+      ]
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: argv.mode === "production" ? "notifier.min.css" : "notifier.css"
+      })
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.ts']
-  },
-  postcss: [
-    autoprefixer({
-      browsers: ['last 2 versions']
-    })
-  ],
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      include: /\.min\.js$/,
-      minimize: false,
-      compressor: {
-        warnings: false
-      }
-    })
-  ]
+  }
 }
