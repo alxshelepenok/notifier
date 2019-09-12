@@ -40,7 +40,7 @@
     "ts-loader": "^6.1.0",
     "typescript": "^3.5.3",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7",
+    "webpack-cli": "^3.3.8",
     "browserslist": "^4.7.0",
     "mini-css-extract-plugin": "^0.8.0",
     "stylelint": "10.1.0",
