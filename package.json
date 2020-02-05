@@ -44,7 +44,7 @@
     "browserslist": "^4.8.6",
     "mini-css-extract-plugin": "^0.9.0",
     "stylelint": "13.0.0",
-    "stylelint-config-recommended-scss": "4.1.0",
+    "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-scss": "3.14.2",
     "tslint": "5.20.1",
     "concurrently": "5.1.0",
