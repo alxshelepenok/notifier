@@ -48,7 +48,7 @@
     "stylelint-scss": "3.14.2",
     "tslint": "5.20.1",
     "concurrently": "5.1.0",
-    "rimraf": "3.0.1",
+    "rimraf": "3.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
