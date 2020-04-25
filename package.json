@@ -31,7 +31,7 @@
   "homepage": "https://github.com/alxshelepenok/notifier",
   "devDependencies": {
     "autoprefixer": "^9.7.6",
-    "css-loader": "^3.4.2",
+    "css-loader": "^3.5.3",
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
