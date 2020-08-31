@@ -46,7 +46,7 @@
     "stylelint": "13.6.1",
     "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-scss": "3.18.0",
-    "tslint": "6.1.2",
+    "tslint": "6.1.3",
     "concurrently": "5.2.0",
     "rimraf": "3.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
