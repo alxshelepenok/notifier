@@ -39,7 +39,7 @@
     "ts-lint": "^4.5.1",
     "ts-loader": "^8.0.4",
     "typescript": "^4.0.2",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "browserslist": "^4.14.5",
     "mini-css-extract-plugin": "^0.11.0",
