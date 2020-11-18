@@ -1,4 +1,4 @@
-# Notifier
+# notifier
 
 [![circleci build status](https://circleci.com/gh/alxshelepenok/notifier.svg?style=svg)](https://circleci.com/gh/alxshelepenok/notifier)
 [![travisci build status](https://travis-ci.org/alxshelepenok/notifier.svg?branch=master)](https://travis-ci.org/alxshelepenok/notifier)
