@@ -2,6 +2,12 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
   "labels": ["renovate"],
   "prHourlyLimit": 8,
   "prConcurrentLimit": 16,
