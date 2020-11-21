@@ -43,7 +43,7 @@
     "webpack-cli": "^3.3.12",
     "browserslist": "^4.14.7",
     "mini-css-extract-plugin": "^0.12.0",
-    "stylelint": "13.6.1",
+    "stylelint": "13.8.0",
     "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-scss": "3.18.0",
     "tslint": "6.1.3",
