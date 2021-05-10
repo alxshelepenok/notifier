@@ -34,7 +34,7 @@
     "css-loader": "^5.2.4",
     "node-sass": "^5.0.0",
     "postcss-loader": "^3.0.0",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^10.2.0",
     "style-loader": "^2.0.0",
     "ts-lint": "^4.5.1",
     "ts-loader": "^8.2.0",
