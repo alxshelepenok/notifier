@@ -1,7 +1,6 @@
 # notifier
 
 [![circleci build status](https://circleci.com/gh/alxshelepenok/notifier.svg?style=svg)](https://circleci.com/gh/alxshelepenok/notifier)
-[![travisci build status](https://travis-ci.org/alxshelepenok/notifier.svg?branch=master)](https://travis-ci.org/alxshelepenok/notifier)
 [![npm version](https://badge.fury.io/js/ts-notifier.svg)](https://badge.fury.io/js/ts-notifier)
 
 Notifications library written in TypeScript with no dependencies.
