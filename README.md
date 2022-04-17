@@ -11,33 +11,27 @@ Notifications library written in TypeScript with no dependencies.
 
 ## Usage
 
-    import Notifier from 'ts-notifier';
-    import '~ts-notifier/dist/notifier.min.css';
+```ts
+import Notifier from 'ts-notifier';
+import '~ts-notifier/dist/notifier.min.css';
 
-    const notifier = new Notifier({
-        theme: 'default',
-        position: 'top-right' 
-    });
-    
-    notifier.post('Hello World', {
-        type: 'error',
-        delay: '6000',
-        animationShowClass: 'notifier__item--animation-show',
-        animationHideClass: 'notifier__item--animation-hide'
-    });
+const notifier = new Notifier({
+  theme: 'default',
+  position: 'top-right' 
+});
 
-## Building
-
-Production:</br>
-`yarn build`
-
-Development:</br>
-`yarn build-dev`
+notifier.post('Hello World', {
+  type: 'error',
+  delay: '6000',
+  animationShowClass: 'notifier__item--animation-show',
+  animationHideClass: 'notifier__item--animation-hide'
+});
+```
 
 ## License
 The MIT license.
 
-Copyright (c) 2016-2019 Alexander Shelepenok
+Copyright (c) 2016-2022 Alexander Shelepenok
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
