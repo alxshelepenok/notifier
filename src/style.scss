@@ -16,7 +16,6 @@ $default-border-color: #7dbce0;
 $success-border-color: #afcda4;
 $warning-border-color: #d8cf82;
 
-
 .notifier {
   &__list {
     position: fixed;
@@ -63,33 +62,33 @@ $warning-border-color: #d8cf82;
     margin-bottom: 10px;
     border: 1px solid $default-border-color;
     line-height: $line-height;
-    background: $default-bg-color; 
-    color: $default-color; 
+    background: $default-bg-color;
+    color: $default-color;
     cursor: pointer;
     border-radius: 2px;
 
     &--type {
       &-default {
         background: $default-bg-color;
-        border-color: $default-border-color; 
+        border-color: $default-border-color;
         color: $default-color;
       }
 
       &-warning {
         background: $warning-bg-color;
-        border-color: $warning-border-color; 
+        border-color: $warning-border-color;
         color: $warning-color;
       }
 
       &-error {
         background: $error-bg-color;
-        border-color: $error-border-color; 
+        border-color: $error-border-color;
         color: $error-color;
       }
 
       &-success {
         background: $success-bg-color;
-        border-color: $success-border-color; 
+        border-color: $success-border-color;
         color: $success-color;
       }
 
@@ -154,12 +153,12 @@ $warning-border-color: #d8cf82;
 @-webkit-keyframes notifier-show {
   0% {
     opacity: 0;
-    -webkit-transform: perspective(450px) translate(0, -30px) rotateX(90deg);
+    transform: perspective(450px) translate(0, -30px) rotateX(90deg);
   }
 
   100% {
     opacity: 1;
-    -webkit-transform: perspective(450px) translate(0, 0) rotateX(0deg);
+    transform: perspective(450px) translate(0, 0) rotateX(0deg);
   }
 }
 
@@ -167,11 +166,11 @@ $warning-border-color: #d8cf82;
 @-webkit-keyframes notifier-hide {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
+
   100% {
     opacity: 0;
-    -webkit-transform: scale(.8);
+    transform: scale(.8);
   }
 }

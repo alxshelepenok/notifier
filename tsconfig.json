@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "target",
     "module": "commonjs",
     "sourceMap": true,
-    "rootDir": ".",
-    "outDir": "dist",
-    "isolatedModules": false,
+    "declaration": true,
     "removeComments": true,
+    "isolatedModules": false,
     "preserveConstEnums": true,
     "noImplicitUseStrict": false,
-    "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "target"
   },
   "files": [
     "src/index.ts"

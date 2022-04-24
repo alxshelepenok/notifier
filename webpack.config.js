@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
       ts: "./index.ts"
     },
     output: {
-      path: path.join(__dirname, "./dist"),
+      path: path.join(__dirname, "./target"),
       filename: argv.mode === "production" ? "notifier.min.js" : "notifier.js"
     },
     optimization: {

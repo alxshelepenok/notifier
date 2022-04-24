@@ -9,11 +9,6 @@
     "label-position": true,
     "max-line-length": [true, 140],
     "member-access": true,
-    "member-ordering": [true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
-    ],
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [true,
@@ -45,13 +40,6 @@
     "semicolon": true,
     "trailing-comma": false,
     "triple-equals": [true, "allow-null-check"],
-    "typedef-whitespace": [true, {
-      "call-signature": "nospace",
-      "index-signature": "nospace",
-      "parameter": "nospace",
-      "property-declaration": "nospace",
-      "variable-declaration": "nospace"
-    }],
     "variable-name": false,
     "whitespace": [true,
       "check-branch",

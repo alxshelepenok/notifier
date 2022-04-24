@@ -12,12 +12,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm ci
       - save_cache:
           paths:
             - node_modules
-          key: dependencies-{{ checksum "yarn.lock" }}
+          key: dependencies-{{ checksum "package-lock.json" }}
 
   lint:
     <<: *defaults
@@ -25,8 +25,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn lint
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run lint
 
   build:
     <<: *defaults
@@ -34,8 +34,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn build
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run build
 
 workflows:
   version: 2

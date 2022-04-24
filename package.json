@@ -1,34 +1,28 @@
 {
-  "version": "1.1.0",
   "name": "ts-notifier",
+  "version": "1.1.1",
   "description": "Notifications library written in TypeScript with no dependencies",
-  "main": "./dist/notifier.min.js",
-  "typings": "./dist/src/index.d.ts",
+  "keywords": [
+    "typescript",
+    "notifications"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alxshelepenok/notifier.git"
+  },
+  "license": "MIT",
+  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
+  "main": "./target/notifier.min.js",
+  "typings": "./target/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint:ts": "tslint -c tslint.json \"src/**/*.ts\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "lint": "concurrently \"yarn run lint:ts\" \"yarn run lint:scss\"",
     "clean": "rimraf dist",
     "build": "yarn run clean && webpack --mode production",
     "build-dev": "yarn run clean && webpack --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alxshelepenok/notifier.git"
-  },
-  "keywords": [
-    "typescript",
-    "notifer",
-    "no dependencies",
-    "notifications"
-  ],
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alxshelepenok/notifier/issues"
-  },
-  "homepage": "https://github.com/alxshelepenok/notifier",
   "devDependencies": {
     "autoprefixer": "^9.8.8",
     "css-loader": "^5.2.7",
