@@ -5,11 +5,11 @@
 
 Notifications library written in TypeScript with no dependencies.
 
-## Installing
+## Install
 
 `yarn install ts-notifier`
 
-## Usage
+## Example
 
 ```ts
 import Notifier from 'ts-notifier';
