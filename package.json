@@ -19,7 +19,7 @@
     "lint:ts": "tslint -c tslint.json \"src/**/*.ts\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "lint": "concurrently \"yarn run lint:ts\" \"yarn run lint:scss\"",
-    "clean": "rimraf dist",
+    "clean": "rimraf target",
     "build": "yarn run clean && webpack --mode production",
     "build-dev": "yarn run clean && webpack --mode development"
   },
