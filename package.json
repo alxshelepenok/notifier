@@ -1,6 +1,6 @@
 {
   "name": "ts-notifier",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Notifications library written in TypeScript with no dependencies",
   "keywords": [
     "typescript",
@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
-  "main": "target/src/notifier.min.js",
+  "main": "target/notifier.min.js",
   "typings": "target/src/index.d.ts",
   "files": [
     "target"
