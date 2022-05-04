@@ -1,7 +1,6 @@
 # notifier
 
 [![circleci build status](https://circleci.com/gh/alxshelepenok/notifier.svg?style=svg)](https://circleci.com/gh/alxshelepenok/notifier)
-[![npm version](https://badge.fury.io/js/ts-notifier.svg)](https://badge.fury.io/js/ts-notifier)
 
 Notifications library written in TypeScript with no dependencies.
 
@@ -13,7 +12,7 @@ Notifications library written in TypeScript with no dependencies.
 
 ```ts
 import Notifier from 'ts-notifier';
-import '~ts-notifier/dist/notifier.min.css';
+import '~ts-notifier/target/src/notifier.min.css';
 
 const notifier = new Notifier({
   theme: 'default',

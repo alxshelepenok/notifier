@@ -1,6 +1,6 @@
 {
   "name": "ts-notifier",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Notifications library written in TypeScript with no dependencies",
   "keywords": [
     "typescript",
@@ -12,16 +12,18 @@
   },
   "license": "MIT",
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
-  "main": "./target/notifier.min.js",
-  "typings": "./target/src/index.d.ts",
+  "main": "target/src/notifier.min.js",
+  "typings": "target/src/index.d.ts",
+  "files": [
+    "target"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint:ts": "tslint -c tslint.json \"src/**/*.ts\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",
-    "lint": "concurrently \"yarn run lint:ts\" \"yarn run lint:scss\"",
+    "lint": "concurrently \"npm run lint:ts\" \"npm run lint:scss\"",
     "clean": "rimraf target",
-    "build": "yarn run clean && webpack --mode production",
-    "build-dev": "yarn run clean && webpack --mode development"
+    "build": "npm run clean && webpack --mode production",
+    "build:development": "npm run clean && webpack --mode development"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
