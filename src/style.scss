@@ -18,6 +18,7 @@ $warning-border-color: #d8cf82;
 
 .notifier {
   &__list {
+    font-family: inherit;
     position: fixed;
     z-index: 1000;
     top: $spacer;

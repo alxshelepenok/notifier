@@ -6,24 +6,24 @@ Notifications library written in TypeScript with no dependencies.
 
 ## Install
 
-`yarn install ts-notifier`
+`npm install ts-notifier`
 
 ## Example
 
 ```ts
-import Notifier from 'ts-notifier';
-import '~ts-notifier/target/src/notifier.min.css';
+import Notifier from "ts-notifier";
+import "ts-notifier/target/notifier.min.css";
 
 const notifier = new Notifier({
-  theme: 'default',
-  position: 'top-right' 
+  theme: "default",
+  position: "top-right" 
 });
 
-notifier.post('Hello World', {
-  type: 'error',
-  delay: '6000',
-  animationShowClass: 'notifier__item--animation-show',
-  animationHideClass: 'notifier__item--animation-hide'
+notifier.post("Hello World", {
+  type: "error",
+  delay: "6000",
+  animationShowClass: "notifier__item--animation-show",
+  animationHideClass: "notifier__item--animation-hide"
 });
 ```
 

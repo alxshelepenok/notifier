@@ -13,8 +13,13 @@ module.exports = (env, argv) => {
       ts: "./index.ts"
     },
     output: {
+      library: "notifier",
+      libraryTarget: "umd",
       path: path.join(__dirname, "./target"),
-      filename: argv.mode === "production" ? "notifier.min.js" : "notifier.js"
+      filename: argv.mode === "production" ? "notifier.min.js" : "notifier.js",
+      libraryExport: "default",
+      umdNamedDefine: true,
+      globalObject: 'this'
     },
     optimization: {
       minimizer: [
